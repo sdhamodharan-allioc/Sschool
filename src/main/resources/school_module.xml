@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="helloBean" class="com.learning.spring.beans.Sample">
+		<property name="name" value="Java School" />
+	</bean>
+	<bean id="schoolBean" class="com.learning.spring.beans.School" scope="prototype" >
+		<constructor-arg name="schoolcode" value="100"/>
+		<constructor-arg name="schoolName" value="Don Bosco"/>
+		<constructor-arg name="address" ref="addressBean" />
+	</bean>
+	
+	<bean id="addressBean" class="com.learning.spring.beans.Address">
+		<constructor-arg  name="building" value="Church"/>
+		<constructor-arg name="city" value="Polur"/>
+		<constructor-arg name="pincode" value="606803"/>
+	</bean>
+</beans>
